@@ -226,3 +226,6 @@ mock_data
 DerivedData/
 *.xcuserstate
 xcuserdata/
+
+# Notes
+notes.txt
