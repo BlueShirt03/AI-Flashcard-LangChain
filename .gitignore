@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Mock Data Files 
+mock_data
+
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/

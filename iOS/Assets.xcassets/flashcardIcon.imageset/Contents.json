@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "material-symbols-light--cards-stack.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
