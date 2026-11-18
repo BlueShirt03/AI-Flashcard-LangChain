@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from Backend.models.flashcard_models import FlashcardResponse
 from Backend.models.quiz_models import QuizData
 from Backend.config import (AI_API_KEY, AI_MODEL, AI_BASE_URL, BLOCKED_CONTENT)
-from Backend.services.ai.openai_compatible_provider import OpenAICompatibleProvider
+from Backend.services.ai.langchain_provider import LangChainProvider
 from Backend.services.flashcard_generation_service import FlashcardGenerationService
 from Backend.services.content_safety_service import ContentSafetyService
 from Backend.services.flashcard_service import FlashcardService
@@ -16,10 +16,10 @@ app = FastAPI(
 )
 
 # Configure the services used by the flashcard generation workflow.
-provider = OpenAICompatibleProvider(
-    api_key=AI_API_KEY,
-    model=AI_MODEL,
-    base_url=AI_BASE_URL,
+provider = LangChainProvider(
+    api_key= AI_API_KEY,
+    model= AI_MODEL, 
+    base_url= AI_BASE_URL
 )
 
 content_safety_service = ContentSafetyService(BLOCKED_CONTENT)
