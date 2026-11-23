@@ -69,4 +69,4 @@ Initial thoughts before testing where that the run times for the baseline test w
 
 **Conclusion:**
 
-Completion of LangChain migration did improve the response time for flashcard generation process. 
+Completion of LangChain migration did improve the response time for flashcard generation process by 6.5%. 
