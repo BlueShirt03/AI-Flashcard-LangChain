@@ -1,44 +1,74 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
-# Represents a single answer option belonging to a quiz question
 class Answer(BaseModel):
-    id: int
-    text: str
-    isRightAnswer: bool
-    questionId: int
+    id: int = Field(description="Unique idenifier for the answer option.")
 
-# Represents a quiz question, including its possible answers
-# and the answer IDs selected by the user. 
+    text: str = Field(
+        min_length=1, 
+        description="The text displayed for the answer option."
+    )
+
+    isRightAnswer: bool = Field(
+        description="Indicates whether this is a correct answer."
+    )
+
+    questionId: int = Field(
+        description="Identifier of the question this answer belongs to."
+    )
+
 class Question(BaseModel):
-    id: int
-    quizId: int
-    text: str
-    answers: list[Answer]
-    userAnswerIdList: list[int]
+    id: int = Field(description="Unique identifier for the question.") 
 
-# Represent an individual quiz and all the quietions associated with it. 
+    quizId: int = Field(description="Identifier of the quiz containing this question.")
+
+    text: str = Field(
+        min_length=1,
+        description="The question presented to the user."
+    )
+
+    answers: list[Answer] = Field(
+        min_length=1,
+        description="The available answer options for this question."
+    )
+
+    userAnswerIdList: list[int] = Field(description="Identifiers of the answer options selected by the user.")
+
 class Quiz(BaseModel):
-    id: int
-    title: str
-    tags: str
-    questions: list[Question]
+    id: int = Field(description="Unique identifier for the quiz.")
 
-# Root model for the quiz data received by the backend.
-# A single request can contain multiple quiz results. 
+    title: str = Field(
+        min_length=1,
+        description="Title of the quiz."
+    )
+
+    tags: str = Field(description="The category or topic associated with the quiz.")
+
+    questions: list[Question] = Field(
+        min_length=1,
+        description="The questions belonging to this quiz."
+    )
+
 class QuizData(BaseModel):
-    result: list[Quiz]
+    result: list[Quiz] = Field(
+        min_length=1, 
+        description="The collection of quiz results submitted for flashcard generation."
+    )
 
-# Simplified representation of a question the user answered incorrectly.
-# This model contains only the information needed for flashcard generation.
 class IncorrectQuestion(BaseModel):
-    questionId: int
-    question: str
-    userAnswers: str
-    correctAnswer: str 
+    questionId: int = Field(description="Identifier of the incorrectly answered question.")
 
-# Groups all incorrect questions belonging to the same quiz.
-# The quizzId is preserved so generated flashcards can later be
-# associated with the correct quiz and flashcard set.
+    question: str = Field(
+        min_length=1,
+        description="The original question answered incorrectly by the user."
+    )
+    
+    userAnswers: str = Field(description="The incorrect answer or answers selected by the user.")
+
+    correctAnswer: str = Field(
+        min_length=1,
+        description="The correct answer used to generate an educational flashcard."
+    )
+
 class QuizIncorrectQuestions(BaseModel):
-    quizId: int
-    incorrectQuestions: list[IncorrectQuestion]
+    quizId: int = Field(description="Identifier of the quiz containing the incorrect questions.")
+    incorrectQuestions: list[IncorrectQuestion] = Field(description="The incorrectly answered questions associated with this quiz.")
