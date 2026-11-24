@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
+import { gerenateFlashcards } from './services/apiService'
 import './App.css'
 
-function App() {
+  function App() {
   const [quizzes, setQuizzes] = useState([])
   const [error, setError] = useState([])
   const [selectedQuiz, setSelectedQuiz] = useState(null)
+  const [flashcards, setFlashcards] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() =>{
     async function loadQuizzes() {
@@ -23,6 +26,37 @@ function App() {
     }
     loadQuizzes()
   }, [])
+
+  async function handleGenerateFlashcards() {
+    if (!selectedQuiz || isLoading){
+      return
+    }
+  
+
+  setIsLoading(true)
+  setError('')
+  setFlashcards([])
+
+  try {
+    const responses = await gerenateFlashcards(selectedQuiz)
+
+    const quizResponse = responses.find(
+      (response) => response.quizId === selectedQuiz.id
+    )
+
+    if(!quizResponse){
+      throw new Error('No flashcards returned for the selected quiz.')
+    }
+
+    setFlashcards(quizResponse.flashcards)
+
+    console.log('Generated flashcards:', quizResponse.flashcards)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <main>
@@ -54,8 +88,11 @@ function App() {
           <p>Category: {selectedQuiz.tags}</p>
           <p>Total Questions: {selectedQuiz.questions.length}</p>
 
-          <button type="button">
-            Generate Flashcards
+          <button type="button" onClick={handleGenerateFlashcards} disabled={isLoading}>
+            {isLoading ? 'Generating Flashcards...' : 'Generate Flashcards'}
+            {flashcards.length > 0 && (
+              <p>Successfully generated {flashcards.length} flashcards.</p>
+            )}
           </button>
         </section>
       )}
