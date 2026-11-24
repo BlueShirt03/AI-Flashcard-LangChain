@@ -1,0 +1,712 @@
+{
+  "result": [
+    {
+      "id": 1,
+      "title": "Science Practice Quiz",
+      "tags": "Science",
+      "questions": [
+        {
+          "id": 1,
+          "quizId": 1,
+          "text": "Which planet is known as the Red Planet?",
+          "answers": [
+            {
+              "id": 11,
+              "text": "Venus",
+              "isRightAnswer": false,
+              "questionId": 1
+            },
+            {
+              "id": 12,
+              "text": "Mars",
+              "isRightAnswer": true,
+              "questionId": 1
+            },
+            {
+              "id": 13,
+              "text": "Jupiter",
+              "isRightAnswer": false,
+              "questionId": 1
+            },
+            {
+              "id": 14,
+              "text": "Mercury",
+              "isRightAnswer": false,
+              "questionId": 1
+            }
+          ],
+          "userAnswerIdList": [
+            11
+          ]
+        },
+        {
+          "id": 2,
+          "quizId": 1,
+          "text": "What gas do plants absorb during photosynthesis?",
+          "answers": [
+            {
+              "id": 21,
+              "text": "Oxygen",
+              "isRightAnswer": false,
+              "questionId": 2
+            },
+            {
+              "id": 22,
+              "text": "Nitrogen",
+              "isRightAnswer": false,
+              "questionId": 2
+            },
+            {
+              "id": 23,
+              "text": "Carbon dioxide",
+              "isRightAnswer": true,
+              "questionId": 2
+            },
+            {
+              "id": 24,
+              "text": "Hydrogen",
+              "isRightAnswer": false,
+              "questionId": 2
+            }
+          ],
+          "userAnswerIdList": [
+            21
+          ]
+        },
+        {
+          "id": 3,
+          "quizId": 1,
+          "text": "What is the chemical symbol for gold?",
+          "answers": [
+            {
+              "id": 31,
+              "text": "Ag",
+              "isRightAnswer": false,
+              "questionId": 3
+            },
+            {
+              "id": 32,
+              "text": "Au",
+              "isRightAnswer": true,
+              "questionId": 3
+            },
+            {
+              "id": 33,
+              "text": "Fe",
+              "isRightAnswer": false,
+              "questionId": 3
+            },
+            {
+              "id": 34,
+              "text": "Cu",
+              "isRightAnswer": false,
+              "questionId": 3
+            }
+          ],
+          "userAnswerIdList": [
+            31
+          ]
+        },
+        {
+          "id": 4,
+          "quizId": 1,
+          "text": "Which organ pumps blood through the human body?",
+          "answers": [
+            {
+              "id": 41,
+              "text": "Lungs",
+              "isRightAnswer": false,
+              "questionId": 4
+            },
+            {
+              "id": 42,
+              "text": "Liver",
+              "isRightAnswer": false,
+              "questionId": 4
+            },
+            {
+              "id": 43,
+              "text": "Heart",
+              "isRightAnswer": true,
+              "questionId": 4
+            },
+            {
+              "id": 44,
+              "text": "Kidneys",
+              "isRightAnswer": false,
+              "questionId": 4
+            }
+          ],
+          "userAnswerIdList": [
+            41
+          ]
+        },
+        {
+          "id": 5,
+          "quizId": 1,
+          "text": "At sea level, at what temperature does water boil in Celsius?",
+          "answers": [
+            {
+              "id": 51,
+              "text": "90",
+              "isRightAnswer": false,
+              "questionId": 5
+            },
+            {
+              "id": 52,
+              "text": "100",
+              "isRightAnswer": true,
+              "questionId": 5
+            },
+            {
+              "id": 53,
+              "text": "80",
+              "isRightAnswer": false,
+              "questionId": 5
+            },
+            {
+              "id": 54,
+              "text": "120",
+              "isRightAnswer": false,
+              "questionId": 5
+            }
+          ],
+          "userAnswerIdList": [
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "History Practice Quiz",
+      "tags": "History",
+      "questions": [
+        {
+          "id": 6,
+          "quizId": 2,
+          "text": "Who was the first president of the United States?",
+          "answers": [
+            {
+              "id": 61,
+              "text": "Thomas Jefferson",
+              "isRightAnswer": false,
+              "questionId": 6
+            },
+            {
+              "id": 62,
+              "text": "George Washington",
+              "isRightAnswer": true,
+              "questionId": 6
+            },
+            {
+              "id": 63,
+              "text": "Abraham Lincoln",
+              "isRightAnswer": false,
+              "questionId": 6
+            },
+            {
+              "id": 64,
+              "text": "John Adams",
+              "isRightAnswer": false,
+              "questionId": 6
+            }
+          ],
+          "userAnswerIdList": [
+            61
+          ]
+        },
+        {
+          "id": 7,
+          "quizId": 2,
+          "text": "In which year did World War II end?",
+          "answers": [
+            {
+              "id": 71,
+              "text": "1944",
+              "isRightAnswer": false,
+              "questionId": 7
+            },
+            {
+              "id": 72,
+              "text": "1945",
+              "isRightAnswer": true,
+              "questionId": 7
+            },
+            {
+              "id": 73,
+              "text": "1939",
+              "isRightAnswer": false,
+              "questionId": 7
+            },
+            {
+              "id": 74,
+              "text": "1950",
+              "isRightAnswer": false,
+              "questionId": 7
+            }
+          ],
+          "userAnswerIdList": [
+            71
+          ]
+        },
+        {
+          "id": 8,
+          "quizId": 2,
+          "text": "Which civilization built Machu Picchu?",
+          "answers": [
+            {
+              "id": 81,
+              "text": "Aztec",
+              "isRightAnswer": false,
+              "questionId": 8
+            },
+            {
+              "id": 82,
+              "text": "Maya",
+              "isRightAnswer": false,
+              "questionId": 8
+            },
+            {
+              "id": 83,
+              "text": "Inca",
+              "isRightAnswer": true,
+              "questionId": 8
+            },
+            {
+              "id": 84,
+              "text": "Roman",
+              "isRightAnswer": false,
+              "questionId": 8
+            }
+          ],
+          "userAnswerIdList": [
+            81
+          ]
+        },
+        {
+          "id": 9,
+          "quizId": 2,
+          "text": "Which document was adopted by the United States in 1776?",
+          "answers": [
+            {
+              "id": 91,
+              "text": "Bill of Rights",
+              "isRightAnswer": false,
+              "questionId": 9
+            },
+            {
+              "id": 92,
+              "text": "Declaration of Independence",
+              "isRightAnswer": true,
+              "questionId": 9
+            },
+            {
+              "id": 93,
+              "text": "Constitution",
+              "isRightAnswer": false,
+              "questionId": 9
+            },
+            {
+              "id": 94,
+              "text": "Magna Carta",
+              "isRightAnswer": false,
+              "questionId": 9
+            }
+          ],
+          "userAnswerIdList": [
+            91
+          ]
+        },
+        {
+          "id": 10,
+          "quizId": 2,
+          "text": "Who was the first person to walk on the Moon?",
+          "answers": [
+            {
+              "id": 101,
+              "text": "Buzz Aldrin",
+              "isRightAnswer": false,
+              "questionId": 10
+            },
+            {
+              "id": 102,
+              "text": "Yuri Gagarin",
+              "isRightAnswer": false,
+              "questionId": 10
+            },
+            {
+              "id": 103,
+              "text": "Neil Armstrong",
+              "isRightAnswer": true,
+              "questionId": 10
+            },
+            {
+              "id": 104,
+              "text": "John Glenn",
+              "isRightAnswer": false,
+              "questionId": 10
+            }
+          ],
+          "userAnswerIdList": [
+            101
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Geography Practice Quiz",
+      "tags": "Geography",
+      "questions": [
+        {
+          "id": 11,
+          "quizId": 3,
+          "text": "What is the largest ocean on Earth?",
+          "answers": [
+            {
+              "id": 111,
+              "text": "Atlantic Ocean",
+              "isRightAnswer": false,
+              "questionId": 11
+            },
+            {
+              "id": 112,
+              "text": "Indian Ocean",
+              "isRightAnswer": false,
+              "questionId": 11
+            },
+            {
+              "id": 113,
+              "text": "Pacific Ocean",
+              "isRightAnswer": true,
+              "questionId": 11
+            },
+            {
+              "id": 114,
+              "text": "Arctic Ocean",
+              "isRightAnswer": false,
+              "questionId": 11
+            }
+          ],
+          "userAnswerIdList": [
+            111
+          ]
+        },
+        {
+          "id": 12,
+          "quizId": 3,
+          "text": "What is the capital of Canada?",
+          "answers": [
+            {
+              "id": 121,
+              "text": "Toronto",
+              "isRightAnswer": false,
+              "questionId": 12
+            },
+            {
+              "id": 122,
+              "text": "Ottawa",
+              "isRightAnswer": true,
+              "questionId": 12
+            },
+            {
+              "id": 123,
+              "text": "Vancouver",
+              "isRightAnswer": false,
+              "questionId": 12
+            },
+            {
+              "id": 124,
+              "text": "Montreal",
+              "isRightAnswer": false,
+              "questionId": 12
+            }
+          ],
+          "userAnswerIdList": [
+            121
+          ]
+        },
+        {
+          "id": 13,
+          "quizId": 3,
+          "text": "Which continent contains the Sahara Desert?",
+          "answers": [
+            {
+              "id": 131,
+              "text": "Asia",
+              "isRightAnswer": false,
+              "questionId": 13
+            },
+            {
+              "id": 132,
+              "text": "Africa",
+              "isRightAnswer": true,
+              "questionId": 13
+            },
+            {
+              "id": 133,
+              "text": "Australia",
+              "isRightAnswer": false,
+              "questionId": 13
+            },
+            {
+              "id": 134,
+              "text": "South America",
+              "isRightAnswer": false,
+              "questionId": 13
+            }
+          ],
+          "userAnswerIdList": [
+            131
+          ]
+        },
+        {
+          "id": 14,
+          "quizId": 3,
+          "text": "Which country is home to the city of Kyoto?",
+          "answers": [
+            {
+              "id": 141,
+              "text": "China",
+              "isRightAnswer": false,
+              "questionId": 14
+            },
+            {
+              "id": 142,
+              "text": "South Korea",
+              "isRightAnswer": false,
+              "questionId": 14
+            },
+            {
+              "id": 143,
+              "text": "Japan",
+              "isRightAnswer": true,
+              "questionId": 14
+            },
+            {
+              "id": 144,
+              "text": "Thailand",
+              "isRightAnswer": false,
+              "questionId": 14
+            }
+          ],
+          "userAnswerIdList": [
+            141
+          ]
+        },
+        {
+          "id": 15,
+          "quizId": 3,
+          "text": "What is the longest river in South America?",
+          "answers": [
+            {
+              "id": 151,
+              "text": "Orinoco River",
+              "isRightAnswer": false,
+              "questionId": 15
+            },
+            {
+              "id": 152,
+              "text": "Paraná River",
+              "isRightAnswer": false,
+              "questionId": 15
+            },
+            {
+              "id": 153,
+              "text": "Amazon River",
+              "isRightAnswer": true,
+              "questionId": 15
+            },
+            {
+              "id": 154,
+              "text": "São Francisco River",
+              "isRightAnswer": false,
+              "questionId": 15
+            }
+          ],
+          "userAnswerIdList": [
+            151
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Mathematics Practice Quiz",
+      "tags": "Mathematics",
+      "questions": [
+        {
+          "id": 16,
+          "quizId": 4,
+          "text": "What is 7 multiplied by 8?",
+          "answers": [
+            {
+              "id": 161,
+              "text": "54",
+              "isRightAnswer": false,
+              "questionId": 16
+            },
+            {
+              "id": 162,
+              "text": "56",
+              "isRightAnswer": true,
+              "questionId": 16
+            },
+            {
+              "id": 163,
+              "text": "64",
+              "isRightAnswer": false,
+              "questionId": 16
+            },
+            {
+              "id": 164,
+              "text": "48",
+              "isRightAnswer": false,
+              "questionId": 16
+            }
+          ],
+          "userAnswerIdList": [
+            161
+          ]
+        },
+        {
+          "id": 17,
+          "quizId": 4,
+          "text": "What is the square root of 81?",
+          "answers": [
+            {
+              "id": 171,
+              "text": "8",
+              "isRightAnswer": false,
+              "questionId": 17
+            },
+            {
+              "id": 172,
+              "text": "7",
+              "isRightAnswer": false,
+              "questionId": 17
+            },
+            {
+              "id": 173,
+              "text": "9",
+              "isRightAnswer": true,
+              "questionId": 17
+            },
+            {
+              "id": 174,
+              "text": "6",
+              "isRightAnswer": false,
+              "questionId": 17
+            }
+          ],
+          "userAnswerIdList": [
+            171
+          ]
+        },
+        {
+          "id": 18,
+          "quizId": 4,
+          "text": "What is 15 percent of 200?",
+          "answers": [
+            {
+              "id": 181,
+              "text": "20",
+              "isRightAnswer": false,
+              "questionId": 18
+            },
+            {
+              "id": 182,
+              "text": "25",
+              "isRightAnswer": false,
+              "questionId": 18
+            },
+            {
+              "id": 183,
+              "text": "30",
+              "isRightAnswer": true,
+              "questionId": 18
+            },
+            {
+              "id": 184,
+              "text": "35",
+              "isRightAnswer": false,
+              "questionId": 18
+            }
+          ],
+          "userAnswerIdList": [
+            181
+          ]
+        },
+        {
+          "id": 19,
+          "quizId": 4,
+          "text": "How many degrees are in a right angle?",
+          "answers": [
+            {
+              "id": 191,
+              "text": "45",
+              "isRightAnswer": false,
+              "questionId": 19
+            },
+            {
+              "id": 192,
+              "text": "90",
+              "isRightAnswer": true,
+              "questionId": 19
+            },
+            {
+              "id": 193,
+              "text": "180",
+              "isRightAnswer": false,
+              "questionId": 19
+            },
+            {
+              "id": 194,
+              "text": "60",
+              "isRightAnswer": false,
+              "questionId": 19
+            }
+          ],
+          "userAnswerIdList": [
+            191
+          ]
+        },
+        {
+          "id": 20,
+          "quizId": 4,
+          "text": "What is the value of 3 squared plus 4 squared?",
+          "answers": [
+            {
+              "id": 201,
+              "text": "12",
+              "isRightAnswer": false,
+              "questionId": 20
+            },
+            {
+              "id": 202,
+              "text": "49",
+              "isRightAnswer": false,
+              "questionId": 20
+            },
+            {
+              "id": 203,
+              "text": "25",
+              "isRightAnswer": true,
+              "questionId": 20
+            },
+            {
+              "id": 204,
+              "text": "24",
+              "isRightAnswer": false,
+              "questionId": 20
+            }
+          ],
+          "userAnswerIdList": [
+            201
+          ]
+        }
+      ]
+    }
+  ]
+}
