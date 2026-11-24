@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { gerenateFlashcards } from './services/apiService'
+import FlashcardView from './components/FlashcardView'
 import './App.css'
 
   function App() {
   const [quizzes, setQuizzes] = useState([])
-  const [error, setError] = useState([])
+  const [error, setError] = useState('')
   const [selectedQuiz, setSelectedQuiz] = useState(null)
   const [flashcards, setFlashcards] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [flashcardCache, setFlashcardCache] = useState({})
 
   useEffect(() =>{
     async function loadQuizzes() {
@@ -31,6 +33,13 @@ import './App.css'
     if (!selectedQuiz || isLoading){
       return
     }
+
+    if (flashcardCache[selectedQuiz.id]){
+      setError('')
+      setFlashcards(flashcardCache[selectedQuiz.id])
+      console.log('Flashcards retrieved from cache.')
+      return
+    }
   
 
   setIsLoading(true)
@@ -50,7 +59,13 @@ import './App.css'
 
     setFlashcards(quizResponse.flashcards)
 
+    setFlashcardCache((previousCache) => ({
+      ...previousCache,
+      [selectedQuiz.id]: quizResponse.flashcards
+    }))
+
     console.log('Generated flashcards:', quizResponse.flashcards)
+
     } catch (err) {
       setError(err.message)
     } finally {
@@ -61,39 +76,62 @@ import './App.css'
   return (
     <main>
 
+      <header className='app-header'>
       <h1>AI Flashcard Generator</h1>
 
       <p>
         Generate Flashcards from incorrectly answered quiz questions
         using LangChain and AI.
       </p>
+      </header>
 
-      {error && <p>{error}</p>}
+      {error && <p className='error-message'>{error}</p>}
 
-      {quizzes.map((quiz) => (
-        <div key={quiz.id}>
-          <h3>{quiz.title}</h3>
-          <p>Category: {quiz.tags}</p>
+      <div className='quiz-list'>
+        {quizzes.map((quiz) => (
+          <div
+            key={quiz.id}
+            className={`quiz-card ${selectedQuiz?.id === quiz.id ? 'active' : ''}`}
+          >
 
-          <button type="button" onClick={() => setSelectedQuiz(quiz)}>
-            Select Quiz
-          </button>
+            <h3>{quiz.title}</h3>
+            <p>Category: {quiz.tags}</p>
 
-        </div>
-      ))}
+            <button
+              type="button"
+              disabled={isLoading}
+              onClick={() => {
+                setSelectedQuiz(quiz)
+                setFlashcards(flashcardCache[quiz.id] || [])
+                setError('')
+              }}
+            >
+              Select Quiz
+            </button>
+          </div>
+        ))}
+      </div>
 
       {selectedQuiz && (
-        <section>
+        <section className="selected-quiz">
           <h2>Selected Quiz: {selectedQuiz.title}</h2>
           <p>Category: {selectedQuiz.tags}</p>
           <p>Total Questions: {selectedQuiz.questions.length}</p>
 
-          <button type="button" onClick={handleGenerateFlashcards} disabled={isLoading}>
+          <button className="generate-button" type="button" onClick={handleGenerateFlashcards} disabled={isLoading}>
+
             {isLoading ? 'Generating Flashcards...' : 'Generate Flashcards'}
-            {flashcards.length > 0 && (
-              <p>Successfully generated {flashcards.length} flashcards.</p>
-            )}
+
           </button>
+
+          {flashcards.length > 0 && (
+            <FlashcardView
+              key={selectedQuiz.id}
+              flashcards={flashcards}
+              category={selectedQuiz.tags}
+            />
+            )}
+
         </section>
       )}
 
