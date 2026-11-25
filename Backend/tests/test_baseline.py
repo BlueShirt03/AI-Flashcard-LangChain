@@ -10,6 +10,7 @@ from Backend.services.content_safety_service import ContentSafetyService
 from Backend.services.flashcard_service import FlashcardService
 from Backend.services.flashcard_generation_service import FlashcardGenerationService
 from Backend.services.prompt_builder import FlashcardPromptBuilder
+from Backend.services.flashcard_cache_service import FlashcardCacheService
 
 def test_baseline() -> None:
 
@@ -28,10 +29,12 @@ def test_baseline() -> None:
     content_saftey = ContentSafetyService(BLOCKED_CONTENT) 
     flashcard_service = FlashcardService(provider, content_saftey)
     prompt_builder = FlashcardPromptBuilder()
+    cache_service = FlashcardCacheService()
 
     generation_service = FlashcardGenerationService(
         prompt_builder,
-        flashcard_service
+        flashcard_service,
+        cache_service,
     )
 
 

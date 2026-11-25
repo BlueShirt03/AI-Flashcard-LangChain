@@ -4,3 +4,4 @@ python-dotenv
 openai
 pytest
 uvicorn
+slowapi==0.1.10

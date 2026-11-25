@@ -220,7 +220,7 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Mock Data Files 
-mock_data
+
 
 # Xcode
 DerivedData/

@@ -4,7 +4,8 @@ from Backend.services.flashcard_generation_service import FlashcardGenerationSer
 from Backend.services.content_safety_service import ContentSafetyService
 from Backend.services.flashcard_service import FlashcardService
 from Backend.services.prompt_builder import FlashcardPromptBuilder
-from Backend.services.ai.openai_compatible_provider import OpenAICompatibleProvider
+from Backend.services.ai.langchain_provider import LangChainProvider
+from Backend.services.flashcard_cache_service import FlashcardCacheService
 from Backend.config import (
     AI_API_KEY,
     AI_MODEL,
@@ -16,7 +17,7 @@ from Backend.config import (
 def test_flashcard_generation_service() -> None:
 
     # Connects to a mock data in the form of a JSON file
-    with open("mock_data/QuizzesWithUserAnswers.json", "r", encoding="utf-8",) as file:
+    with open("mock_data/mock_quiz_data.json", "r", encoding="utf-8",) as file:
         quiz_json = json.load(file)
 
     # Checks if JSON model is valid and then 
@@ -24,7 +25,7 @@ def test_flashcard_generation_service() -> None:
     quiz_data = QuizData.model_validate(quiz_json)
 
     # Instance of AI model using the application's enviroment settings
-    provider = OpenAICompatibleProvider(
+    provider = LangChainProvider(
         api_key= AI_API_KEY,
         model= AI_MODEL,
         base_url= AI_BASE_URL,
@@ -40,11 +41,13 @@ def test_flashcard_generation_service() -> None:
     # Instance of prompt builder service 
     prompt_builder = FlashcardPromptBuilder()
 
-    # Instance of flashcard generation service object
-    # using prompt_builder and flaschard_service vars as parameters
+    cache_service = FlashcardCacheService()
+
+    # Initialize the generation service with its required dependencies.
     generation_service = FlashcardGenerationService(
         prompt_builder= prompt_builder, 
         flashcard_service= flaschard_service,
+        cache_service=cache_service,
     )
 
     # storse generated flashed from AI model into results
@@ -53,14 +56,20 @@ def test_flashcard_generation_service() -> None:
     # Prints out the number of flashcards
     print(f"\nGenerated {len(result)} flashcards")
 
+
+    # Verify that all four quizzes have generated responses.
+    assert len(result) == 4
+
+    # Verify that each quiz contains five generated flashcards.
+    assert all(len(response.flashcards) == 5 for response in result)
+
+    # Verify that all generated responses match the original quiz IDs.
+    assert {response.quizId for response in result} == {
+        quiz.id for quiz in quiz_data.result
+    }
+
     # Prints out the flashcard's quiz id and a list of flashcards for manual verification
-    for index, flashcard in enumerate(
-        result,
-        start=1,
-    ):
-        print(f"\nFlashcard {index}")
-        print(f"Quiz ID: {flashcard.quizId}")
-        print(f"Flashcards: {flashcard.flashcards}")
+    print(f"Total flashcards: {sum(len(r.flashcards) for r in result)}")
 
 
 if __name__ == "__main__":
