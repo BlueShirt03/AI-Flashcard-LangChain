@@ -6,7 +6,7 @@ from slowapi.errors import RateLimitExceeded
 from fastapi.middleware.cors import CORSMiddleware
 from Backend.models.flashcard_models import FlashcardResponse
 from Backend.models.quiz_models import QuizData
-from Backend.config import (AI_API_KEY, AI_MODEL, AI_BASE_URL, BLOCKED_CONTENT)
+from Backend.config import (AI_API_KEY, AI_MODEL, AI_BASE_URL, FRONTEND_URL, BLOCKED_CONTENT)
 from Backend.services.ai.langchain_provider import LangChainProvider
 from Backend.services.flashcard_generation_service import FlashcardGenerationService
 from Backend.services.content_safety_service import ContentSafetyService
@@ -45,7 +45,7 @@ quiz_validation_service = QuizValidationService(file_path=quiz_data_path)
 #Allows the React frontend to communicate with the backend.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins= ["http://localhost:5173"],
+    allow_origins= ["http://localhost:5173", FRONTEND_URL],
     allow_credentials= False,
     allow_methods= ["GET", "POST"],
     allow_headers= ["Content-Type"],

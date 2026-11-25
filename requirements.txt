@@ -1,7 +1,9 @@
-fastapi
-pydantic
-python-dotenv
-openai
-pytest
-uvicorn
+fastapi==0.163.0
+uvicorn==0.54.0
+pydantic==2.13.4
+python-dotenv==1.2.2
+openai==3.39.0
+langchain==1.4.7
+langchain-openai==1.7.2
 slowapi==0.1.10
+pytest==9.2.0
